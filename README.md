@@ -1,4 +1,4 @@
-# 🧠 Alpha: Mastering Data Structures and Algorithms (Java) – Handwritten Notes
+# 🧠 Alpha: Mastering Data Structures and Algorithms (Java) 
 
 Welcome to **Alpha Mastering DSA**, a curated collection of **handwritten notes** covering essential **Data Structures and Algorithms** concepts using **Java**. These notes are concise, exam-ready, and ideal for **interview preparation**, **college exams**, and **coding practice**.
 
