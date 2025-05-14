@@ -1,0 +1,56 @@
+import java.util.ArrayList;
+
+public class Main {
+    // Brute-force method
+    public static boolean pairSum1(ArrayList<Integer> list, int target) {
+        for (int i = 0; i < list.size(); i++) {
+            for (int j = i + 1; j < list.size(); j++) {
+                if (list.get(i) + list.get(j) == target) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    
+    // Two-pointer optimized approach
+    public static boolean OptimisedPairSum1(ArrayList<Integer> list, int target) {
+        int leftPointer = 0;
+        int rightPointer = list.size() - 1;
+
+        while (leftPointer < rightPointer) {
+            if (list.get(leftPointer) + list.get(rightPointer) == target) {
+                return true; // Pair found
+            } else if (list.get(leftPointer) + list.get(rightPointer) < target) {
+                leftPointer++; // Move left pointer to the right
+            } else {
+                rightPointer--; // Move right pointer to the left
+            }
+        }
+
+        return false; // No pair found
+    }
+
+    public static void main(String[] args) {
+        ArrayList<Integer> numbers = new ArrayList<>();
+        numbers.add(1);
+        numbers.add(2);
+        numbers.add(3);
+        numbers.add(4);
+        numbers.add(5);
+        numbers.add(6);
+        numbers.add(7);
+        numbers.add(8);
+        numbers.add(9);
+
+        int target = 10;
+
+        // Brute-force method
+        boolean result1 = pairSum1(numbers, target);
+        System.out.println("Pair found using brute-force method: " + result1);
+
+        // Two-pointer optimized approach
+        boolean result2 = OptimisedPairSum1(numbers, target);
+        System.out.println("Pair found using two-pointer optimized approach: " + result2);
+    }
+}
